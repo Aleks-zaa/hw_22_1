@@ -42,7 +42,7 @@ class Product(models.Model):
 
 class Version(models.Model):
     objects = None
-    version = models.ForeignKey(Product, related_name='versions', on_delete=models.CASCADE, null=True, blank=True,
+    product = models.ForeignKey(Product, related_name='versions', on_delete=models.CASCADE, null=True, blank=True,
                                 verbose_name='Версия машины', )
     name = models.TextField(verbose_name="название версии")
     number = models.IntegerField(verbose_name="номер версии", null=True, blank=True)

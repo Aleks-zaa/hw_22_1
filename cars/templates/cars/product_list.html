@@ -31,8 +31,8 @@
                             </div>
                         </div>
                         {% for version in car.versions.all %}
-                        {% if version.indicates_current_version %}
-                        <p class="card-text">Версия: {{ version.number }} Название: {{ version.name }}</p>
+                        {% if version.sign %}
+                        <p class="card-text">Версия: {{ version.number }}. Название: {{ version.name }}</p>
                         {% endif %}
                         {% endfor %}
 

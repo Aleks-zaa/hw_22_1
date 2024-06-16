@@ -1,13 +1,19 @@
+from django.forms import inlineformset_factory
 from django.urls import reverse
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from django.forms import inlineformset_factory
+
 from cars.forms import CarForm, VersionForm
 from cars.models import Product, Version
 
 
 class CarListView(ListView):
     model = Product
+
+    # def get_queryset(self, *args, **kwargs):
+    #     queryset = super().get_queryset(*args, **kwargs)
+    #     queryset = queryset.filter(is_active=True)
+    #     return queryset
 
 
 class CarDetailView(DetailView):
